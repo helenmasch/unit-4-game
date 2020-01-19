@@ -1,0 +1,40 @@
+body {
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background-color: lightpink;
+    
+  }
+  
+  .container {
+    /* Box-model */
+    width: 100%;
+    max-width: 960px;
+    color: #4aaaa5;
+    background-color: #666;
+    font-size: 50px;
+  
+    /* Positioning */
+    margin: 0 auto;
+    clear: both;
+    text-align: center;
+  }
+  
+  .number-guessed {
+    font-size: 25px;
+  }
+  
+  .wins-losses {
+    background-color: grey;
+    font-size: 25px;
+  }
+  
+  .crystal-images{
+      width: 300px;
+      height: 300px;
+  }
+  
+  .images{
+      width: 300px;
+      height: 300px;
+  }

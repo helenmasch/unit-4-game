@@ -6,18 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystals Collector</title>
   <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="assets/css/styles.css" media="screen">
+    <link rel="stylesheet" href="./assets/style.css" media="screen">
 </head>
   
-<header>
-Crystals Collector!
-  </header>
+<header id="masthead">
+  <div class="container">
+    <strong> Crystals Collector! </strong>
+  </div>
+</header>
 
 <body>
   <p>
     You will be given a random number at the start of the game.
   </p>
-  
+   
   <p>
     There are four crystals below. By clicking on a crystal you will add a specific amount of points for your total score.
   </p>
@@ -34,21 +36,39 @@ Crystals Collector!
     Each time when the game starts, the game will change the values of each crystal.
   </p>
   
-  <section>
-    Insert number clicked after clicking a crystal
-  </section>
+  <div class="target-number">
+    <section>
+    Insert # of guess here
+    </section>
+  </div>
   
-  <section>
+   <div class="wins-losses">
+    <section>
     Wins: 
     <hr>
-    Loses:
+    Losses:
+    </section>
+  </div>
+  
+  <div class="crystal-images" >
+      
+    
+    
+</div>
+  
+  <div class="total-score">
+       <section>
+        Your total score is:
   </section>
+</div>
+       
     
 <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<!-- Script -->
-  <script type="text/javascript">
+<!-- JavaScript -->
+  <script type="text/javascript" src="./assets/game.js">
+  </script>
   
 </body>
 </html>
