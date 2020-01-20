@@ -10,7 +10,7 @@ var crystalNumberTwo ;
 var crystalNumberThree ;
 var crystalNumberFour ;
 
-var totalWins = 5
+var totalWins = 0
 var totalLosses = 0
 
 //thee selctors: id, class, and element name(tag  name)
@@ -44,7 +44,7 @@ function initializeGame() {
    $(".crystal-images").append(img)
 
    var img=$("<img>")
-   img.attr("src","./assets/images/green-crystal.jpg")
+   img.attr("src","./assets/images/dark-purple-crystal.jpg")
    img.attr("class", "images")
    $(".crystal-images").append(img)
 
@@ -58,22 +58,39 @@ function initializeGame() {
    img.attr("class", "images")
    $(".crystal-images").append(img)
 
+   
 }
 
 initializeGame()
 
+// Set onclick funtion (code is breaking)
+    //$(".crystal-images").on("click", function()) {
+    //userTotal = userTotal + 1;
+    //console.log("New userTotal " + userTotal);
+    //$(".wins-losses").text(userTotal);
 
+    //if (userTotal === random) {
+    //    winner()
+    //}
+//}
 
+// Return the values of each crystal
+function getCrystalAnswer() {
+    return function() {
+    userTotal = userTotal + targetNumber;
+    console.log("New userTotal " + userTotal);
+    $(".wins-losses").text(userTotal);
+        
+    if (userTotal === randomNumber) {
+        winner()
+    }
 
-// Set onclick funtion 
+    else if (userTotal > randomNumber) {
+        loser()
+    }
+    }
+}
 
-
-
-// Create the function of the variables (if statement)
-
-// Create the else statement of the variables
-
-// Return the values of that variable 
 
 // Reset and restart the game over again
 })
