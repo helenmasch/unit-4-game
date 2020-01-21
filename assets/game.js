@@ -13,13 +13,35 @@ var crystalNumberFour ;
 var totalWins = 0
 var totalLosses = 0
 
-var userTotal
+var userTotal = 0
+
+// Puts 4 crystal images on the page (make sure it is
+// outside the initialize game function or else will
+// 4 more crystal images to the page)
+var img=$("<img>")
+   img.attr("src","./assets/images/blue-crystal.jpg")
+   img.attr("class", "blue-crystal")
+   $(".crystal-images").append(img)
+
+   var img=$("<img>")
+   img.attr("src","./assets/images/dark-purple-crystal.jpg")
+   img.attr("class", "dark-purple-crystal")
+   $(".crystal-images").append(img)
+
+   var img=$("<img>")
+   img.attr("src","./assets/images/white-crystal.jpg")
+   img.attr("class", "white-crystal")
+   $(".crystal-images").append(img)
+
+   var img=$("<img>")
+   img.attr("src","./assets/images/red-crystal.jpg")
+   img.attr("class", "red-crystal")
+   $(".crystal-images").append(img)
 
 //thee selctors: id, class, and element name(tag  name)
 //id: begins with # id name(ex: #name)
 //class: begins with . class name (ex: .number)
 //element: body, div, p, img, a
-
 
 function initializeGame() {
 
@@ -43,59 +65,91 @@ function initializeGame() {
    // in html it is only static and just an image
    // no further functions after that
    // the attr is anything before the = 
-   var img=$("<img>")
-   img.attr("src","./assets/images/blue-crystal.jpg")
-   img.attr("class", "images")
-   $(".crystal-images").append(img)
-
-   var img=$("<img>")
-   img.attr("src","./assets/images/dark-purple-crystal.jpg")
-   img.attr("class", "images")
-   $(".crystal-images").append(img)
-
-   var img=$("<img>")
-   img.attr("src","./assets/images/white-crystal.jpg")
-   img.attr("class", "images")
-   $(".crystal-images").append(img)
-
-   var img=$("<img>")
-   img.attr("src","./assets/images/red-crystal.jpg")
-   img.attr("class", "images")
-   $(".crystal-images").append(img)
 
    
 }
+    function winner() {
+        alert("You Win!");
+        // adds 1 to the win everytime its called 
+        totalWins++; 
+        $("#wins").text(totalWins);
+        userTotal = 0;
+        $(".total-score").text(userTotal);
+        initializeGame();
+    }
 
+    function loser() {
+        alert("You Lose");
+        // adds 1 to losses everytime its called
+        totalLosses++;
+        $("#losses").text(totalLosses);
+        userTotal = 0; 
+        $(".total-score").text(userTotal);
+        initializeGame();
+    }
+    
 initializeGame()
 
-// Set onclick funtion (code is breaking)
-    //$(".crystal-images").on("click", function()) {
-    //userTotal = userTotal + 1;
-    //console.log("New userTotal " + userTotal);
-    //$(".wins-losses").text(userTotal);
-
-    //if (userTotal === random) {
-    //    winner()
-    //}
-//}
-
-// Return the values of each crystal
-function getCrystalAnswer() {
-    return function() {
-    userTotal = userTotal + targetNumber;
+// Set click funtion but not allowing me to click images
+    $(".blue-crystal").click(function() {
+    userTotal = userTotal + crystalNumberOne;
     console.log("New userTotal " + userTotal);
-    $(".wins-losses").text(userTotal);
-        
+    $(".total-score").text(userTotal);
+
     if (userTotal === targetNumber) {
         winner()
     }
 
-    else if (userTotal > randomNumber) {
+    else if (userTotal > targetNumber) {
         loser()
     }
+    // why is the ) here? -- but 
+}) 
+
+$(".dark-purple-crystal").click(function() {
+    userTotal = userTotal + crystalNumberTwo;
+    console.log("New userTotal " + userTotal);
+    $(".total-score").text(userTotal);
+
+    if (userTotal === targetNumber) {
+        winner()
     }
-}
 
+    else if (userTotal > targetNumber) {
+        loser()
+    }
+    // why is the ) here? -- but 
+}) 
 
-// Reset and restart the game over again
+$(".white-crystal").click(function() {
+    userTotal = userTotal + crystalNumberThree;
+    console.log("New userTotal " + userTotal);
+    $(".total-score").text(userTotal);
+
+    if (userTotal === targetNumber) {
+        winner()
+    }
+
+    else if (userTotal > targetNumber) {
+        loser()
+    }
+    // why is the ) here? -- but 
+}) 
+
+$(".red-crystal").click(function() {
+    userTotal = userTotal + crystalNumberFour;
+    console.log("New userTotal " + userTotal);
+    $(".total-score").text(userTotal);
+
+    if (userTotal === targetNumber) {
+        winner()
+    }
+
+    else if (userTotal > targetNumber) {
+        loser()
+    }
+    // why is the ) here? -- but 
+
+}); 
 })
+// Remember to close ALL out 
