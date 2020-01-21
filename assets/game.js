@@ -13,6 +13,8 @@ var crystalNumberFour ;
 var totalWins = 0
 var totalLosses = 0
 
+var userTotal
+
 //thee selctors: id, class, and element name(tag  name)
 //id: begins with # id name(ex: #name)
 //class: begins with . class name (ex: .number)
@@ -20,8 +22,11 @@ var totalLosses = 0
 
 
 function initializeGame() {
+
+   //Game generates a random (whole) number between 19-120
    targetNumber = Math.floor(Math.random() * 101) + 19
 
+   //Creates a hidden value for each crystal
    crystalNumberOne = Math.floor(Math.random() * 11) + 1
    crystalNumberTwo = Math.floor(Math.random() * 11) + 1
    crystalNumberThree = Math.floor(Math.random() * 11) + 1
@@ -81,7 +86,7 @@ function getCrystalAnswer() {
     console.log("New userTotal " + userTotal);
     $(".wins-losses").text(userTotal);
         
-    if (userTotal === randomNumber) {
+    if (userTotal === targetNumber) {
         winner()
     }
 
